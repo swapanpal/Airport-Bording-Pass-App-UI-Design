@@ -40,9 +40,10 @@ public class MainActivity extends AppCompatActivity {
     private void displayBoardingPassInfo(BoardingPassInfo info){
         //  Use mBinding to set the Text in all the textViews using the data in info
         mBinding.textViewPassengerName.setText(info.passengerName);
-        mBinding.textViewOriginAirport.setText(info.originCode);
-        mBinding.textViewFlightCode.setText(info.flightCode);
-        mBinding.textViewDestinationAirport.setText(info.destCode);
+        //  Use the flightInfo attribute in mBinding below to get the appropriate text Views
+        mBinding.flightInfo.textViewOriginAirport.setText(info.originCode);
+        mBinding.flightInfo.textViewFlightCode.setText(info.flightCode);
+        mBinding.flightInfo.textViewDestinationAirport.setText(info.destCode);
 
         //  Use a SimpleDateFormat formatter to set the formatted value in time text views
         SimpleDateFormat formatter = new SimpleDateFormat(getString(R.string.timeFormat), Locale.getDefault());
@@ -64,9 +65,10 @@ public class MainActivity extends AppCompatActivity {
                 hoursUntilBoarding, minutesLessHoursUntilBoarding);
 
         mBinding.textViewBoardingInCountdown.setText(hoursAndMinutesUntilBoarding);
-        mBinding.textViewTerminal.setText(info.departureTerminal);
-        mBinding.textViewGate.setText(info.departureGate);
-        mBinding.textViewSeat.setText(info.seatNumber);
+        // Use the boardingInfo attribute in mBinding below to get the appropriate text Views
+        mBinding.boardingInfo.textViewTerminal.setText(info.departureTerminal);
+        mBinding.boardingInfo.textViewGate.setText(info.departureGate);
+        mBinding.boardingInfo.textViewSeat.setText(info.seatNumber);
 
 
     }
