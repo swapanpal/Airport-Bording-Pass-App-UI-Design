@@ -19,6 +19,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+// Enable Data Binding in your application
+    dataBinding.enabled = true
 }
 
 dependencies {
